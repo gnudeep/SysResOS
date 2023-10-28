@@ -60,7 +60,8 @@ _write_uart:
 	push
 _write_uart_loop:
 	# Line Status Register - TSR memory location load to the register
-    	li 	t0, 0x10000014 
+    	#li 	t0, 0x10000014 
+    	li 	t0, 0x10000005 
     	lbu     t1, (t0)
 	# Check the 5th bit of the TSR
     	andi    t1, t1, 0x20  
