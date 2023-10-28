@@ -26,7 +26,7 @@ _start:
         mul 	t3, t2, t0
         add 	sp, t3, t1
 
-	# make all HARTS except 0 wait.
+	# make all HARTS except 1 wait.
 	li	t1, 1
         bne 	t0, t1, _wait
 
