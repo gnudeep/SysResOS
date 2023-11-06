@@ -3,7 +3,7 @@
 # data section is used for declaring initialized data
 .section .data
 newline: .ascii  "\n\0"
-welcome: .ascii  "Welcome to PseudOS\n\0"
+welcome: .ascii  "Welcome to SysResOS\n\0"
 iamhart: .ascii  "I am HART \0"
 
 # Reserve a block of uninitialized memory space for stack space
@@ -26,7 +26,7 @@ _start:
         mul 	t3, t2, t0
         add 	sp, t3, t1
 
-	# make all HARTS except 0 wait.
+	# make all HARTS except 1 wait.
 	li	t1, 1
         bne 	t0, t1, _wait
 
