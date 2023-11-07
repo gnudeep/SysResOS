@@ -60,7 +60,9 @@ _write_uart:
 	push
 _write_uart_loop:
 	# Line Status Register - TSR memory location load to the register
+	# TSR for StarFive VF2 
     	#li 	t0, 0x10000014 
+        # TSR for QEMU
     	li 	t0, 0x10000005 
     	lbu     t1, (t0)
 	# Check the 5th bit of the TSR
