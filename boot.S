@@ -34,6 +34,19 @@ _start:
         # call _setup_uart
         la 	a0, welcome
         call 	_write_uart
+
+	# Write new line
+	call	_writeln
+
+	# Write the iamhartid stirng
+	la	a0, iamhart
+	call	_write_uart
+
+	# Write the HART Id integer value (48 + 1 in ASCII).
+	li	t1, 0x30
+	add	t2, t1, 1
+	sb	t2, 0(a0)
+	call	_write_uart
 	
 	# Wait for interrupts. Holds the program. 
 	wfi
@@ -84,7 +97,7 @@ _write_uart_end:
 
 _writeln:
         push
-        call 	_write_uart
+	#call 	_write_uart
         la 	a0, newline
         call	_write_uart
         pop
